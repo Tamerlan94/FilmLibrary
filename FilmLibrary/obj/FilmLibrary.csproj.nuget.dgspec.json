@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mctam\\Desktop\\Всепапки\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj": {}
+    "C:\\Users\\HP\\source\\repos\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mctam\\Desktop\\Всепапки\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj": {
+    "C:\\Users\\HP\\source\\repos\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mctam\\Desktop\\Всепапки\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
         "projectName": "FilmLibrary",
-        "projectPath": "C:\\Users\\mctam\\Desktop\\Всепапки\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
-        "packagesPath": "C:\\Users\\mctam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mctam\\Desktop\\Всепапки\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\obj\\",
+        "projectPath": "C:\\Users\\HP\\source\\repos\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\source\\repos\\FilmLibrary\\FilmLibrary\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mctam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

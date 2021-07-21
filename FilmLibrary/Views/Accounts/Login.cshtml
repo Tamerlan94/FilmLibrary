@@ -6,20 +6,20 @@
 
 <div class="container">
     <h2>Login</h2>
-    <form method="post" asp-controller="Accounts" asp-action="Login" class="form-group">
+    <form method="post" asp-controller="Accounts" asp-action="Login" >
         <div asp-validation-summary="ModelOnly"></div>
         <div>
             <label asp-for="Email"></label><br />
-            <input type="email" asp-for="Email" class="form-control" />
+            <input type="email" asp-for="Email"/>
             <span asp-validation-for="Email"></span>
         </div>
         <div>
             <label asp-for="Password"></label><br />
-            <input type="password" asp-for="Password" class="form-control" />
+            <input type="password" asp-for="Password"  />
             <span asp-validation-for="Password"></span>
         </div>     
         <div>
-            <input type="submit" value="Login" />
+                <input type="submit" value="Login" />
         </div>
     </form>
 </div>

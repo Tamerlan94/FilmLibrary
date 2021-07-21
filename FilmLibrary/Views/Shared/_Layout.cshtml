@@ -3,15 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - FilmLibrary</title>
+    <title>Kaba</title>
+    <style>
+        .nav-item-1{
+            margin-left:550px;
+        }
+        p{
+            margin-bottom: 0 !important;
+        }
+    </style>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    <p>
+        <a href="#">
+            <img src=" https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/71b0a868-5bf0-4c2f-ba02-d7b6e81d78e6/d7t1lcx-f63e32f5-57af-431a-8f05-22d3d75a5414.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzcxYjBhODY4LTViZjAtNGMyZi1iYTAyLWQ3YjZlODFkNzhlNlwvZDd0MWxjeC1mNjNlMzJmNS01N2FmLTQzMWEtOGYwNS0yMmQzZDc1YTU0MTQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._UEmzMPBMBodYbMRoteRqw_WhvAWK6xeGn43_L2WG0M" width="100%"
+                 height="190px" style="object-fit: cover;">
+        </a>
+    </p>
+   
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FilmLibrary</a>
+                <a class="navbar-brand text-light mb-1" asp-area="" asp-controller="Home" asp-action="Index">Kaba</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -19,11 +34,33 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Фильмы</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Сериалы</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Мультфильмы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Аниме</a>
+                        </li>
+                            @if (User.Identity.IsAuthenticated == false)
+                            {
+                    <li class="nav-item-1">
+                        <a class="nav-link text-dark" asp-controller="Accounts" asp-action="Register" >Регистрация</a>
+                    </li>
+                    <li>
+                        <a class="nav-link text-dark" asp-controller="Accounts" asp-action="Login">Вход</a>
+                    </li>
+                            }
+                            else
+                            {
+                    <li>
+                        <a class="nav-link text-dark" asp-controller="Films" asp-action="Create">Создать фильм</a>
+                    </li>
+                            }
+                        
                     </ul>
                 </div>
             </div>
@@ -35,11 +72,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - FilmLibrary - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
