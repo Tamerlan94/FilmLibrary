@@ -1,8 +1,52 @@
-﻿@{
+﻿@model IEnumerable<FilmLibrary.Models.Entities.Film>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@if (User.Identity.IsAuthenticated == false)
+{
+    <a asp-controller="Accounts" asp-action="Register">Регистрация</a>
+    <a asp-controller="Accounts" asp-action="Login">Вход</a>
+}
+else
+{
+    <a asp-controller="Films" asp-action="Create">Создать фильм</a>
+}
+
+
+
+<div class="container">
+    <div class="d-flex flex-wrap">
+        @foreach (var film in Model)
+        {
+            <a asp-action="Info" asp-controller="Films" asp-route-id="@film.Id">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top img-fluid" src=@Url.Content("~/Uploads/" + film.PosterPath) alt="Poster">
+                    <div class="card-body text-center">
+                        <p class="card-text text-center">@film.Title</p>
+                    </div>
+                </div>
+            </a>
+            <div>
+                <img src=@Url.Content("~/Uploads/" + film.PosterPath) alt="Poster" />
+                <a asp-action="Info" asp-controller="Films" asp-route-id="@film.Id">@film.Title</a>
+            </div>
+        }
+
+        @if (User.IsInRole("admin"))
+        {
+            <a asp-action="Create" asp-controller="Films" asp-route-id="@Guid.NewGuid()">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top img-fluid" src=@Url.Content("~/image/" + "iconplus160.png") alt="Poster">
+                    <div class="card-body text-center">
+                        <p class="card-text text-center">Новый фильм</p>
+                    </div>
+                </div>
+            </a>
+        }
+
+    </div>
+
 </div>
+

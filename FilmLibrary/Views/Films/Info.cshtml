@@ -1,0 +1,28 @@
+﻿@model FilmLibrary.Models.ModelView.FilmViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <img src=@Url.Content(Model.PosterPath) alt="Poster" />
+        </div>
+        <div class="col">
+            <label asp-for="Title"></label>
+            <p>@Model.Title</p>
+            <label asp-for="Description"></label>
+            <p>@Model.Description</p>
+            <label asp-for="Producer"></label>
+            <p>@Model.Producer</p>
+            <label asp-for="YearOfIssue"></label>
+            <p>@Model.YearOfIssue</p>
+
+            @if (User.Identity.IsAuthenticated && Model.UserId == Model.CurrentUserId)
+            { 
+                <a asp-action="Edit" asp-controller="Films" asp-route-id="@Model.Id">Редактировать</a>
+            }
+        </div>
+    </div>
+</div>

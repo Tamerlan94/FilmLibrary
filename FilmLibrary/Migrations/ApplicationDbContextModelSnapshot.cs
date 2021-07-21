@@ -45,6 +45,22 @@ namespace FilmLibrary.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("564abfd3-b81e-4fc1-8b3d-b540d925306a"),
+                            ConcurrencyStamp = "d028d3b3-654d-413b-81e0-03c2dc75113d",
+                            Name = "admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = new Guid("efaf345d-4a73-4278-8c24-3a044a291a7a"),
+                            ConcurrencyStamp = "6f457498-2246-4dd0-8996-604b828e9151",
+                            Name = "member",
+                            NormalizedName = "MEMBER"
+                        });
                 });
 
             modelBuilder.Entity("FilmLibrary.Models.Entities.ApplicationUser", b =>
@@ -71,8 +87,7 @@ namespace FilmLibrary.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Lastname")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -81,8 +96,7 @@ namespace FilmLibrary.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -122,6 +136,27 @@ namespace FilmLibrary.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("564abfd3-b81e-4fc1-8b3d-b540d925306a"),
+                            AccessFailedCount = 0,
+                            Birthdate = new DateTime(2000, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ConcurrencyStamp = "daee8bf2-3375-42df-89dc-3345f76e2784",
+                            Email = "admin@mail.ru",
+                            EmailConfirmed = true,
+                            Lastname = "Admin",
+                            LockoutEnabled = false,
+                            Name = "Admin",
+                            NormalizedEmail = "ADMIN@MAIL.RU",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEG3Aw1LR+PYp7wgDbl6lhcZrVm+BggwPovUEFhJD1//VBsd059R0vjcA63mAE36Jg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "00000000-0000-0000-0000-000000000000",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("FilmLibrary.Models.Entities.Film", b =>
@@ -131,27 +166,22 @@ namespace FilmLibrary.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
-                        .HasMaxLength(512)
-                        .HasColumnType("nvarchar(512)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PosterPath")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Producer")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("YearOfIssue")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -242,6 +272,13 @@ namespace FilmLibrary.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = new Guid("564abfd3-b81e-4fc1-8b3d-b540d925306a"),
+                            RoleId = new Guid("564abfd3-b81e-4fc1-8b3d-b540d925306a")
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
@@ -270,7 +307,7 @@ namespace FilmLibrary.Migrations
                     b.HasOne("FilmLibrary.Models.Entities.ApplicationUser", "User")
                         .WithMany("Films")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("User");

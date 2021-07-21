@@ -13,11 +13,13 @@ namespace FilmLibrary.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        
-        public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signManager)
+        private readonly RoleManager<ApplicationRole> _roleManager;
+         
+        public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signManager, RoleManager<ApplicationRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signManager;
+            _roleManager = roleManager;
         }
 
         public IActionResult Index()
@@ -51,11 +53,14 @@ namespace FilmLibrary.Controllers
                     Email = model.Email,
                     UserName = model.Email,
                     Birthdate = model.Birthdate
-                };
-
+                };           
+                
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var role = await _roleManager.FindByNameAsync("member");
+                    await _userManager.AddToRoleAsync(user, role.Name);
+
                     await _signInManager.SignInAsync(user, false);
                     return RedirectToAction(nameof(Login));
                 }

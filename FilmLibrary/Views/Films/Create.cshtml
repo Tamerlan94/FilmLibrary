@@ -1,0 +1,41 @@
+﻿@model FilmLibrary.Models.ModelView.FilmViewModel
+
+@{ 
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h2>Добавление нового фильма</h2>
+    <form method="post" asp-controller="Films" asp-action="Create" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="CurrentUserId"/>
+        <div>
+            <label asp-for="Title"></label><br />
+            <input type="text" asp-for="Title" />
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div>
+            <label asp-for="Description"></label><br />
+            <input type="text" asp-for="Description" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div>
+            <label asp-for="Producer"></label><br />
+            <input type="text" asp-for="Producer" />
+            <span asp-validation-for="Producer"></span>
+        </div>
+        <div>
+            <label asp-for="YearOfIssue"></label><br />
+            <input type="text" asp-for="YearOfIssue" />
+            <span asp-validation-for="YearOfIssue"></span>
+        </div>
+        <div>
+            <label asp-for="Poster"></label><br />
+            <input type="file" accept="image/*" asp-for="Poster" />
+            <span asp-validation-for="Poster"></span>
+        </div>
+        <div>
+            <input type="submit" value="Create" />
+        </div>
+    </form>
+</div>

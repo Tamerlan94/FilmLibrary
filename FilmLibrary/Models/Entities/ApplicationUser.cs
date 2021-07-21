@@ -7,9 +7,9 @@ namespace FilmLibrary.Models.Entities
 {
     public class ApplicationUser : IdentityUser<Guid>
     {
-        [MaxLength(30)]
+        //[MaxLength(30)]
         public string Name { get; set; }                                //Имя 
-        [MaxLength(30)]
+        //[MaxLength(30)]
         public string Lastname { get; set; }                            //Фамилия
         public string FullName => $"{Lastname} {Name}";                 //Полное имя
         public DateTime? Birthdate { get; set; }                        //Дата рождения
