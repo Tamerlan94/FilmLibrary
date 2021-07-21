@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nnSoAWY5a0mWXmLGYdo9uXPUaBDNpZrL1bRyRgwGG9ivePbsYmzW8i9PJ77GT5kBUS764XyNRuTnDUaalEt+Mg==",
+  "dgSpecHash": "t9SeWwKr60MjCq4dNOfJ6yXuyTUpVd1FfI+5WpeHoYc5HcCid4j/DddzjTVmMnzbDPVdZqoeZbiY36L9uiIyPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mctam\\Desktop\\Всепапки\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
+  "projectFilePath": "C:\\Users\\mctam\\Desktop\\AllFolders\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mctam\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mctam\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

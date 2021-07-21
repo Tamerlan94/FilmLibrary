@@ -19,14 +19,13 @@ namespace FilmLibrary.Models.ModelView
         [Required] [Display(Name = "YearOfIssue")]
         public string YearOfIssue { get; set; }
 
-        [Required]
-        [Display(Name = "Producer")]
+        [Required] [Display(Name = "Producer")]
         public string Producer { get; set; }
 
         public string PosterPath { get; set; }
+        public string PosterConverted { get; set; }
 
-        [Required(ErrorMessage = "Please choose profile image")]
-        [Display(Name = "Poster")]
+        [Required(ErrorMessage = "Please choose image")] [Display(Name = "Poster")]
         public IFormFile Poster { get; set; }
 
         public Guid UserId { get; set; }   

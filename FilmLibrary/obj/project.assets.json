@@ -8131,11 +8131,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mctam\\Desktop\\Всепапки\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\mctam\\Desktop\\AllFolders\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
       "projectName": "FilmLibrary",
-      "projectPath": "C:\\Users\\mctam\\Desktop\\Всепапки\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
+      "projectPath": "C:\\Users\\mctam\\Desktop\\AllFolders\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\FilmLibrary.csproj",
       "packagesPath": "C:\\Users\\mctam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mctam\\Desktop\\Всепапки\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\obj\\",
+      "outputPath": "C:\\Users\\mctam\\Desktop\\AllFolders\\ШАГ\\ASP.NET\\Exam\\FilmLibrary\\FilmLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

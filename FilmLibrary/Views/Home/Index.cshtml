@@ -28,10 +28,6 @@ else
                     </div>
                 </div>
             </a>
-            <div>
-                <img src=@Url.Content("~/Uploads/" + film.PosterPath) alt="Poster" />
-                <a asp-action="Info" asp-controller="Films" asp-route-id="@film.Id">@film.Title</a>
-            </div>
         }
 
         @if (User.IsInRole("admin"))

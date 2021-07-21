@@ -57,6 +57,7 @@ namespace FilmLibrary.Controllers
                 UserId = film.UserId     
             };
 
+
             var currentUser = await _userManager.GetUserAsync(User);
             if (currentUser != null)
             {
@@ -122,11 +123,12 @@ namespace FilmLibrary.Controllers
 
                 var film = new Film
                 {
+                    Id = model.Id,
                     Title = model.Title,
                     Description = model.Description,
                     YearOfIssue = model.YearOfIssue,
                     Producer = model.Producer,
-                    PosterPath = model.PosterPath,
+                    PosterPath = path,
                     User = currentUser,
                     UserId = currentUser.Id
                 };
@@ -181,7 +183,7 @@ namespace FilmLibrary.Controllers
                     UserId = currentUser.Id
                 };
 
-                film.PosterPath = path;
+                film.PosterPath = path;                
 
                 await _dbContext.Films.AddAsync(film);
                 await _dbContext.SaveChangesAsync();
@@ -208,15 +210,13 @@ namespace FilmLibrary.Controllers
 
             if (model.Poster != null)
             {
-                // путь к папке 
-                string filePath = "/Uploads/" + model.Poster.FileName;
-                // сохраняем файл в папку Uploads в каталоге wwwroot
-                using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
+                string uploadsFolder = Path.Combine(_appEnvironment.WebRootPath, "Uploads");
+                path = Guid.NewGuid().ToString()+ "_" + model.Poster.FileName;
+                string filePath = Path.Combine(uploadsFolder, path);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
-                    model.Poster.CopyToAsync(fileStream);
+                    model.Poster.CopyTo(fileStream);
                 }
-
-                path = filePath;
             }
 
             return path;
