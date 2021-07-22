@@ -5,16 +5,13 @@
 }
 
 
-
-
-
 <div class="container">
     <div class="d-flex flex-wrap">
         @foreach (var film in Model)
         {
             <a asp-action="Info" asp-controller="Films" asp-route-id="@film.Id">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top img-fluid" src=@Url.Content("~/Uploads/" + film.PosterPath) alt="Poster">
+                <div class="card bg-dark">
+                    <img class="card-img-top img-fluid" src="~/Uploads/@film.PosterPath" alt="Poster">
                     <div class="card-body text-center">
                         <p class="card-text text-center">@film.Title</p>
                     </div>

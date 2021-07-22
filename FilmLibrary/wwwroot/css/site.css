@@ -114,7 +114,23 @@ input[type="password"] {
     color: white;
 }
 
-.card{
+.card {
     width:187px;
-    height:259;
+    height:285px;
+    margin-left: 55px;
+    margin-bottom:55px;
+    overflow: hidden;
+    background-size:cover;
 }
+
+img {
+    
+}
+
+.container img {
+    height:100%;
+}
+.Info-film{
+    color: darkgrey !important;
+}
+

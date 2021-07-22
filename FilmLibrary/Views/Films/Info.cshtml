@@ -11,13 +11,13 @@
         </div>
         <div class="col">
             <label asp-for="Title"></label>
-            <p>@Model.Title</p>
+            <p class="Info-film">@Model.Title</p>
             <label asp-for="Description"></label>
-            <p>@Model.Description</p>
+            <p class="Info-film">@Model.Description</p>
             <label asp-for="Producer"></label>
-            <p>@Model.Producer</p>
+            <p class="Info-film">@Model.Producer</p>
             <label asp-for="YearOfIssue"></label>
-            <p>@Model.YearOfIssue</p>
+            <p class="Info-film">@Model.YearOfIssue</p>
 
             @if (User.Identity.IsAuthenticated && Model.UserId == Model.CurrentUserId)
             { 
