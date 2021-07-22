@@ -59,13 +59,62 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #141213;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+header {
+    background-color: #030303;
+    color: white;
+}
+
+h2{
+    color:azure;
+}
+
+label{
+    color:azure;
+}
+
+span {
+    color: azure;
+}
+
+
+label {
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    height: 40px;
+    border-radius: 3px;
+    margin: 7px 0;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: black;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+input[type="email"] {
+    background: transparent;
+    color: white;
+}
+
+input[type="password"] {
+    background: transparent;
+    color: white;
+}
+
+.card{
+    width:187px;
+    height:259;
 }
